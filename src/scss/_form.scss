@@ -1,0 +1,89 @@
+.screen__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+  overflow: hidden;
+}
+
+.form-container {
+  width: 400px;
+  height: 560px;
+  background: linear-gradient(90deg, #a39eff, #1677ff);
+  position: relative;
+  box-shadow: $box-shadow-primary;
+  border-radius: 10px;
+
+  .form {
+    padding: 30px;
+  }
+}
+
+.form__content {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+}
+
+.form__field {
+  margin: 30px 0px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.screen__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+
+.screen__background__shape {
+  transform: rotate(45deg);
+  position: absolute;
+}
+
+.screen__background__shape1 {
+  height: 520px;
+  width: 520px;
+  background: #fff;
+  top: -50px;
+  right: 120px;
+  border-radius: 0 72px 0 0;
+}
+
+.screen__background__shape2 {
+  height: 220px;
+  width: 220px;
+  background: #7eabeb;
+  top: -172px;
+  right: 0;
+  border-radius: 32px;
+}
+
+.screen__background__shape3 {
+  height: 540px;
+  width: 190px;
+  background: linear-gradient(270deg, #076dfc, #1677ff);
+  top: -24px;
+  right: 0;
+  border-radius: 32px;
+}
+
+.screen__background__shape4 {
+  height: 400px;
+  width: 200px;
+  background: #86b1ec;
+  top: 420px;
+  right: 50px;
+  border-radius: 60px;
+}

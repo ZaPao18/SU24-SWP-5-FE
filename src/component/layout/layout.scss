@@ -1,0 +1,7 @@
+.main-container {
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  // position: relative;
+  height: calc(100vh - $header-outer-height);
+}

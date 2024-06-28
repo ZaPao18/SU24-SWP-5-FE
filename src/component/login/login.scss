@@ -1,0 +1,36 @@
+.container-login {
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  box-shadow: $box-shadow-primary;
+  margin: 0 20px;
+  width: 100vw;
+
+  .form-title {
+    width: 300px;
+  }
+}
+
+.login-form {
+  height: 540px;
+  width: 360px;
+}
+
+.login {
+  width: 320px;
+  padding: 30px;
+  padding-top: 60px;
+}
+
+@media screen and (max-width: 600px) {
+  .login-form {
+    height: 500px;
+    width: 340px;
+
+    .login {
+      width: 320px;
+      padding: 20px;
+    }
+  }
+}
