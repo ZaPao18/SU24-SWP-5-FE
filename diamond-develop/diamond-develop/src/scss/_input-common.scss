@@ -1,0 +1,15 @@
+input.form-control,
+input.form-control:focus {
+  background: #f0f0ff;
+}
+
+.error {
+  position: absolute;
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+label {
+  font-size: $fs-18;
+}

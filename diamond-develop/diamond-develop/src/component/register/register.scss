@@ -1,0 +1,50 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  height: 100%;
+
+  .register-wrapper {
+    padding: 20px 40px;
+    box-shadow: $box-shadow-primary;
+    max-width: 1140px;
+    margin: 0 20px;
+    background-color: #fff;
+  }
+}
+
+.register-form {
+  height: 540px;
+}
+
+.register {
+  width: 360px;
+  padding: 30px;
+  padding-top: 36px;
+}
+
+@media screen and (max-width: 768px) {
+  .register-container {
+    .register-wrapper {
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .register-form {
+    width: 380px;
+
+    .register {
+      width: 340px;
+      padding: 20px;
+
+      .button-register {
+        flex-direction: column;
+      }
+    }
+  }
+}

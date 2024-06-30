@@ -1,0 +1,20 @@
+.payment-container {
+  margin: 0 auto;
+  .payment-inner {
+    width: 1200px;
+
+    .payment-item {
+      width: 340px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: $box-shadow-primary;
+    }
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .payment-inner {
+    width: auto !important;
+    flex-direction: column;
+  }
+}

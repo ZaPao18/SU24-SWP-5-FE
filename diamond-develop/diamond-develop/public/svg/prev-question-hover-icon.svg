@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 32 32">
+    <defs>
+        <style>.cls-1{fill:url(#linear-gradient);}</style>
+        <linearGradient id="linear-gradient" x1="8" y1="2.14" x2="24" y2="29.86"
+            gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#ffcf00" />
+            <stop offset="0.23" stop-color="#ffcf00" />
+            <stop offset="0.75" stop-color="#ffcf00" />
+            <stop offset="1" stop-color="#ffcf00" />
+        </linearGradient>
+    </defs>
+    <title>Asset 151</title>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Misc">
+            <path class="cls-1"
+                d="M0,16A16,16,0,1,0,16,0,16,16,0,0,0,0,16Zm24.19-3.72c.45,0,.81.72.81,1.6v4.23c0,.88-.36,1.59-.81,1.6l-8.47.13a.59.59,0,0,0-.33.09.48.48,0,0,0-.09.24,2.84,2.84,0,0,0,0,.42l.17,3.75c0,.09-.13.12-.23.12a.28.28,0,0,1-.23-.09L7.26,16.51A1.37,1.37,0,0,1,7,16.23a2,2,0,0,1,0-.35,1.07,1.07,0,0,1,.25-.38L15,7.63a.32.32,0,0,1,.24-.09h.09a.54.54,0,0,1,.13.37l-.16,3.49a2.92,2.92,0,0,0,0,.42.48.48,0,0,0,.1.25.59.59,0,0,0,.33.09Z" />
+        </g>
+    </g>
+</svg>
