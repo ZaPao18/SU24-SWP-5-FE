@@ -28,26 +28,3 @@ export type ResetPasswordRequest = {
   newPassword: string;
   confirmPassword: string;
 };
-
-export type UserInfoUser = {
-  activated: boolean;
-  avatar: string;
-  collectionId: string;
-  collectionName: string;
-  created: string;
-  dateOfBirth: string;
-  email: string;
-  emailVisibility: false;
-  fullName: string;
-  id: string;
-  phoneNumber: string;
-  subscription: string;
-  updated: string;
-  username: string;
-  verified: false;
-};
-
-export type AuthResponse = {
-  user: UserInfoUser;
-  token?: string;
-};

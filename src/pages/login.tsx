@@ -24,7 +24,6 @@ const SignInPage = () => {
   const handleLogin = async (values: LoginType) => {
     setIsLoading(true);
     const res = await loginApi({ ...values });
-    console.log(res);
 
     if (res?.status === CODE_SUCCESS) {
       notify('success', 'Đăng nhập thành công');
@@ -32,15 +31,17 @@ const SignInPage = () => {
       router.push('/');
       dispatch(setRenderHeaderInfo(Date.now()));
     } else {
-      notify('error', 'Something error!');
+      notify('error', 'Email hoặc mật khẩu sai!');
     }
     setIsLoading(false);
   };
 
   return (
     <div className='page-container'>
-      <Loading loading={isLoading} />
-      <Login onClickLogin={handleLogin} />
+      <div className='page-content'>
+        <Loading loading={isLoading} />
+        <Login onClickLogin={handleLogin} />
+      </div>
     </div>
   );
 };

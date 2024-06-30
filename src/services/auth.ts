@@ -1,5 +1,4 @@
 import {
-  AuthResponse,
   ForgotPasswordRequest,
   LoginType,
   RegisterType,

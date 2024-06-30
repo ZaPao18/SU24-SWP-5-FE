@@ -1,7 +1,31 @@
 .main-container {
-  display: flex;
-  align-items: center;
-  overflow: auto;
+  // overflow: auto;
   // position: relative;
-  height: calc(100vh - $header-outer-height);
+  margin-top: $header-outer-height;
+  min-height: calc(100vh - $header-outer-height - $footer-height);
+
+  .page-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - $header-outer-height - $footer-height);
+
+    .page-content {
+      max-width: 1600px;
+      padding: 15px 20px 0;
+      margin: 0 auto;
+    }
+  }
+
+  .page-container-2 {
+    height: 100%;
+    width: 100%;
+    min-height: calc(100vh - $header-outer-height - $footer-height);
+
+    .page-content {
+      max-width: 1600px;
+      padding: 20px;
+      margin: 0 auto;
+    }
+  }
 }

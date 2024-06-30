@@ -29,7 +29,7 @@ const RegisterPage = () => {
       notify('info', 'Vui lòng nhập mã xác nhận');
       setIsVerify(true);
     } else {
-      notify('error', 'Something error!');
+      notify('error', 'Email đã được đăng ký!');
     }
     setIsLoading(false);
   };
@@ -46,15 +46,17 @@ const RegisterPage = () => {
       router.push('/');
       dispatch(setRenderHeaderInfo(Date.now()));
     } else {
-      notify('error', 'Something error!');
+      notify('error', 'Mã xác nhận sai!');
     }
     setIsLoading(false);
   };
 
   return (
     <div className='page-container'>
-      <Loading loading={isLoading} />
-      <Register isVerify={isVerify} onRegister={handleRegister} onVerifyMail={handleVerifyMail} />
+      <div className='page-content'>
+        <Loading loading={isLoading} />
+        <Register isVerify={isVerify} onRegister={handleRegister} onVerifyMail={handleVerifyMail} />
+      </div>
     </div>
   );
 };

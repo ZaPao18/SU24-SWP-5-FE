@@ -1,13 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
-import { Card, Modal } from 'antd';
-
-import * as Yup from 'yup';
-import { Form, Formik, FormikProps } from 'formik';
+import { useState } from 'react';
+import { Card } from 'antd';
 
 import DiamondButton from '../common/button';
-import InputField from '../input-field/input-field';
-import { ServicesForm } from './services.model';
-import { PHONE_REG_EXP } from '@/constant/auth';
+import BookingServiceModal from './components/booking-service';
 
 const LIST_SERVICES = [
   {
@@ -33,50 +28,11 @@ const LIST_SERVICES = [
   },
 ];
 
-const INIT_VALUES: ServicesForm = {
-  customerName: '',
-  phoneNumber: '',
-  idCard: '',
-  address: '',
-};
-
 const Services = () => {
-  const validate = Yup.object({
-    customerName: Yup.string()
-      .min(3, 'Tối thiểu 3 ký tự')
-      .max(50, 'Tối đa 50 ký tự')
-      .required('Bắt buộc'),
-    phoneNumber: Yup.string()
-      .matches(PHONE_REG_EXP, 'Số điện thoại không hợp lệ')
-      .required('Bắt buộc'),
-    idCard: Yup.string()
-      .min(6, 'Tối thiểu 6 ký tự')
-      .max(18, 'Tối đa 18 ký tự')
-      .required('Bắt buộc'),
-    address: Yup.string()
-      .min(3, 'Tối thiểu 3 ký tự')
-      .max(100, 'Tối đa 100 ký tự')
-      .required('Bắt buộc'),
-  });
-
-  const formRef = useRef<FormikProps<ServicesForm>>(null);
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  useEffect(() => {
-    formRef.current?.resetForm();
-  }, [isModalOpen]);
+  const [isOpenBookServiceModal, setIsOpenBookServiceModal] = useState(false);
 
   const handleShowModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleSubmitForm = (values: ServicesForm) => {
-    console.log(values);
+    setIsOpenBookServiceModal(true);
   };
 
   return (
@@ -89,52 +45,12 @@ const Services = () => {
             <DiamondButton content='Đặt lịch ngay' onClick={handleShowModal} />
           </Card>
         ))}
-      </div>
 
-      <Formik
-        innerRef={formRef}
-        initialValues={INIT_VALUES}
-        validationSchema={validate}
-        onSubmit={handleSubmitForm}
-      >
-        {({ handleSubmit, handleReset }) => (
-          <Form>
-            <Modal
-              open={isModalOpen}
-              title='Đặt lịch hẹn'
-              okText='Đặt lịch ngay'
-              cancelText='Hủy'
-              onOk={() => handleSubmit()}
-              onCancel={handleCancel}
-              footer={(_, { OkBtn, CancelBtn }) => (
-                <>
-                  <DiamondButton
-                    content='Xóa'
-                    type='default'
-                    htmlType='reset'
-                    onClick={handleReset}
-                  />
-                  <CancelBtn />
-                  <OkBtn />
-                </>
-              )}
-            >
-              <div className='form__field'>
-                <InputField name='customerName' type='text' placeholder='Tên đầy đủ' />
-              </div>
-              <div className='form__field'>
-                <InputField name='phoneNumber' type='text' placeholder='Số điện thoại' />
-              </div>
-              <div className='form__field'>
-                <InputField name='idCard' type='text' placeholder='CCCD/CMND' />
-              </div>
-              <div className='form__field'>
-                <InputField name='address' type='text' placeholder='Địa chỉ' />
-              </div>
-            </Modal>
-          </Form>
-        )}
-      </Formik>
+        <BookingServiceModal
+          isOpenBookServiceModal={isOpenBookServiceModal}
+          setIsOpenBookServiceModal={setIsOpenBookServiceModal}
+        />
+      </div>
     </>
   );
 };

@@ -4,6 +4,7 @@ import { ErrorMessage, useField } from 'formik';
 import { ReactNode } from 'react';
 
 type Props = {
+  disabled?: boolean;
   label?: string;
   name: string;
   type?: string;
@@ -15,7 +16,7 @@ type Props = {
   validate?: (value: any) => undefined | string | Promise<any>;
 };
 
-const InputField = ({ label, size = 'large', prefix, ...props }: Props) => {
+const InputField = ({ disabled, label, size = 'large', prefix, ...props }: Props) => {
   const [field, meta] = useField(props);
   return (
     <div style={{ width: '100%' }}>
@@ -25,6 +26,7 @@ const InputField = ({ label, size = 'large', prefix, ...props }: Props) => {
       <Input
         {...field}
         {...props}
+        disabled={disabled}
         status={meta.touched && meta.error ? 'error' : ''}
         autoComplete='off'
         name={field.name}

@@ -15,7 +15,8 @@
         "vars": "all",
         "args": "after-used",
         "caughtErrors": "all",
-        "ignoreRestSiblings": false
+        "ignoreRestSiblings": false,
+        "reportUsedIgnorePattern": false
       }
     ]
   }

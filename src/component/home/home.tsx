@@ -1,20 +1,26 @@
-import { Carousel } from 'antd';
+import { useSelector } from 'react-redux';
+import { selectAuthState } from '@/store/auth-slice';
+
+import AdminHome from './components/admin-home/admin-home';
+import { ACCOUNT_ROLE } from '@/constant/auth';
+import StaffHome from './components/staff-home/staff-home';
+import CustomerHome from './components/customer-home';
 
 const Home = () => {
-  const contentStyle: React.CSSProperties = {
-    height: '160px',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#364d79',
-    width: '100vw',
-  };
+  const authState = useSelector(selectAuthState);
 
   return (
-    <Carousel>
-      {/* <h3 style={contentStyle}>1</h3>
-      <h3 style={contentStyle}>1</h3> */}
-    </Carousel>
+    <div className='page-container-2'>
+      <div className='page-content'>
+        {authState.accountRole === ACCOUNT_ROLE.ADMIN ? (
+          <AdminHome />
+        ) : authState.accountRole === ACCOUNT_ROLE.STAFF ? (
+          <StaffHome />
+        ) : (
+          <CustomerHome />
+        )}
+      </div>
+    </div>
   );
 };
 
