@@ -1,0 +1,24 @@
+{
+  "cSpell.words": ["noninteractive"],
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json": "file:///c%3A/Users/Tran%20Bac/Desktop/mssql.compose.yaml"
+  },
+  "sqltools.connections": [
+    {
+      "mssqlOptions": {
+        "appName": "SQLTools",
+        "useUTC": true,
+        "encrypt": true
+      },
+      "previewLimit": 50,
+      "server": "192.168.1.5",
+      "port": 1433,
+      "driver": "MSSQL",
+      "name": "local db",
+      "password": "@Passw0rd",
+      "username": "sa",
+      "database": "master",
+      "connectionTimeout": 30000
+    }
+  ]
+}
